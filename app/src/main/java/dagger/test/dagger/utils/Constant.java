@@ -5,6 +5,6 @@ package dagger.test.dagger.utils;
  */
 
 public class Constant {
-    public static final String BASE_URL = "https://www.scopecinemas.com/api/";
+    public static final String BASE_URL = "--add base url--";
     public static final String ERROR_OOPS = "Ops, something went wrong. Please try again later.";
 }
