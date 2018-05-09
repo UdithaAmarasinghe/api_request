@@ -30,6 +30,22 @@ public class MainActivity extends BaseActivity implements UserSync.UserSyncCallb
     @Override
     public void onSuccessUserCreate(List<HomeResponse.Datum> result) {
         System.out.println("result xxx "+result.get(0).getSubTitle());
+		
+		/* RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
+        rvFavourite.setLayoutManager(mLayoutManager);
+        List<FavouriteTypes> selectableItems = new ArrayList<>();
+        for (int x = 0; x < response.getData().size(); x++) {
+            selectableItems.add(new FavouriteTypes(response.getData().get(x).getId(), response.getData().get(x).getName(), response.getData().get(x).getImage()));
+        }
+        favouritesListAdapter = new FavouritesListAdapter(mContext, new FavouritesListAdapter.FavouritesListAdapterCallback() {
+            @Override
+            public void SelectFavouriteData(String id, String businessName) {
+                BusinessProfileActivity.startActivity(getActivity(), id, businessName);
+            }
+        });
+        favouritesListAdapter.addAll(selectableItems);
+        rvFavourite.setAdapter(favouritesListAdapter);
+        rvFavourite.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getActivity()).drawable(R.drawable.shape_editext_bg).size(2).build());*/
     }
 
     @Override
