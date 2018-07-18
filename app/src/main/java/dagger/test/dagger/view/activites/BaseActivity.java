@@ -16,7 +16,8 @@ import dagger.test.dagger.services.RestAPI;
 
 public abstract class BaseActivity extends AppCompatActivity{
     public Context mContext;
-
+    public User user;
+    public AppSharedPreference mPreferences;
     @Inject
     RestAPI mRestAPI;
 
@@ -44,7 +45,15 @@ public abstract class BaseActivity extends AppCompatActivity{
     }
 
     private void init() {
+   mPreferences = new AppSharedPreference(mContext);
+        user = mPreferences.getUser();
+    }
+	
+	    protected boolean isLogin() {
+        if (mPreferences.getUser() == null)
+            return false;
 
+        return true; n
     }
 
 }
