@@ -53,7 +53,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         if (mPreferences.getUser() == null)
             return false;
 
-        return true; n
+        return true; 
     }
 
 }
