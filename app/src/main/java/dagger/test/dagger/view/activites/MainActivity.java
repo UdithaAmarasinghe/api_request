@@ -22,6 +22,26 @@ public class MainActivity extends BaseActivity implements UserSync.UserSyncCallb
     }
 
     private void init() {
+		//check user login
+		       if (isLogin()) {
+            //todo add userkey value
+            HomeActivity.startActivity(this, mPreferences.getUserKey(), "","");
+        } else {
+            LoginActivity.startActivity(this, mSearchCode);
+            goNextAnimation();
+        }
+
+        finish();
+		
+		
+		!!!!!!!!!
+		 AppSharedPreference mSharedPreferences = new AppSharedPreference(mContext);
+        mSharedPreferences.clearSharefPreference();
+        startActivity(new Intent(mContext, SplashActivity.class));
+        finish();
+		
+		
+		
         mUserSync = new UserSync(this, mRestAPI);
         HomeRequest homeRequest = new HomeRequest();
         mUserSync.homeInit(this);
